@@ -1,216 +1,155 @@
-# Expense Tracker 💰
+Student Management System
 
-A simple command-line Expense Tracker built with Python.
+A Python-based Student Management System designed to manage student information, subjects, marks, grades, and academic performance.
 
-This project allows users to record, view, update, delete, search, and analyze their personal expenses. Expense data is stored permanently in a JSON file.
+This project was created as part of my Python programming portfolio and demonstrates practical use of Object-Oriented Programming, functions, error handling, JSON file storage, and menu-driven applications.
 
-## 🚀 Features
+Features
 
-- Add new expenses
-- Automatically generate Expense IDs
-- Validate expense dates
-- Validate categories and descriptions
-- Validate expense amounts
-- View all expenses
-- Calculate total expenses
-- Search expenses by category
-- Generate category summaries
-- Update existing expenses
-- Delete expenses
-- Generate expense reports
-- Find highest and lowest expenses
-- Calculate average expense
-- Save expenses to a JSON file
-- Load expenses from a JSON file
-- Handle invalid user input
-- Handle missing or invalid JSON files
+Student Management
 
-## 🛠️ Technologies Used
+- Add a new student
+- View all students
+- Search for a student by ID
+- Update student information
+- Delete a student
+
+Student Marks
+
+- Add marks for subjects
+- View student marks
+- Calculate total marks
+- Calculate average marks
+- Determine student grade
+- Determine pass/fail status
+
+Data Management
+
+- Save student information to a JSON file
+- Load student information from a JSON file
+- Handle invalid JSON data
+- Preserve student marks when the program is restarted
+
+Input Validation
+
+The program validates:
+
+- Student ID
+- Student name
+- Student age
+- Gender
+- Subject names
+- Marks
+- Numeric input
+
+Invalid input is handled using "try/except" and validation loops.
+
+Grading System
+
+The system uses the following grading system:
+
+Average| Grade
+90–100| A
+80–89| B
+70–79| C
+60–69| D
+Below 60| F
+
+The system also determines whether the student has passed or failed.
+
+Technologies Used
 
 - Python 3
+- Object-Oriented Programming
+- Classes and Objects
+- Functions
+- Lists
+- Dictionaries
+- Loops
+- Conditional Statements
+- Exception Handling
 - JSON
-- `datetime` module
+- File Handling
 
-## 📂 Project Structure
+Example
 
-```text
-Expense-Tracker/
+A student can have marks such as:
+
+===== STUDENT MARKS =====
+
+Student ID : 101
+Name       : John
+
+Mathematics     85.00
+Physics         78.00
+English         92.00
+
+Total           255.00
+Average          85.00
+Grade                B
+Result            PASS
+
+Project Structure
+
+student-management-system/
 │
-├── expense_tracker.py
-├── expenses.json
+├── student_management.py
+├── students.json
 ├── README.md
 └── .gitignore
 
-▶️ How to Run
+How to Run
+
 Make sure Python 3 is installed.
-Open a terminal in the project folder and run:
-python expense_tracker.py
-📋 Main Menu
-===== EXPENSE TRACKER =====
 
-1. Add Expense
-2. View Expenses
-3. Total Expenses
-4. Search by Category
-5. Category Summary
-6. Update Expense
-7. Delete Expense
-8. Expense Report
-9. Exit
+Clone the repository:
 
-💾 Data Storage
-The application stores expense information in:
+git clone YOUR_GITHUB_REPOSITORY_URL
 
-    expenses.json
-    
-The data is saved automatically when:
+Move into the project directory:
 
- - A new expense is added
- 
- - An expense is updated
- 
- - An expense is deleted
- 
- - The program is exited
+cd student-management-system
 
-Example JSON data:
+Run the program:
 
-   [
-    {
-        "expense_id": 1,
-        "date": "2026-08-12",
-        "category": "Food",
-        "description": "Lunch",
-        "amount": 250.0
-    }
-]
+python student_management.py
 
-📊 Expense Report
+On Android with Pydroid 3, open "student_management.py" and press the Run button.
 
-The Expense Report provides:
+What I Learned
 
- - Total expenses
- 
- - Number of expenses
- 
- - Average expense
- 
- - Highest expense
- 
- - Lowest expense
- 
-Example:
-      
-     ===== EXPENSE REPORT =====
+Through this project I practiced:
 
-Total Expenses     : 3500.00
-Number of Expenses : 8
-Average Expense    : 437.50
-Highest Expense    : 1200.00
-Lowest Expense     : 100.00 
+1. Creating classes and objects
+2. Creating and using functions
+3. Working with lists and dictionaries
+4. Validating user input
+5. Handling exceptions with "try/except"
+6. Working with JSON files
+7. Saving and loading application data
+8. Building menu-driven applications
+9. Calculating student performance
+10. Organizing a larger Python project
 
+Future Improvements
 
-🔍 Search by Category
-
-Users can search for expenses by category.
-
-For example:
-
-      Enter category to search: food
-      
-The program finds expenses regardless of capitalization.
-
-   Food
-   food
-   FOOD
-   
-are treated as the same category.
-
-🛡️ Input Validation
-
-The program validates user input to prevent common errors.
-
-Date
-
-Dates must use: YYYY-MM-DD
-
-Example: 2026-08-12
-
-Amount
-The amount must be greater than zero.
-Category
-
-The category cannot be empty.
-
-Description
-The description cannot be empty.
-
-Expense ID
-The program checks that the entered Expense ID is a number.
-
-⚠️ Error Handling
-The program uses try/except to handle invalid input.
-
-For example:
-    
-    try:
-    amount = float(input("Enter amount: "))
-except ValueError:
-    print("Please enter a valid number.")
-    
-It also handles problems with the JSON file:
-
-except FileNotFoundError:
-    print("No saved expenses found.")
-
-except json.JSONDecodeError:
-    print("Error: expenses.json contains invalid data.")
-    
-🎯 Learning Objectives
-
-This project demonstrates several important Python concepts:
-
-  - Classes and objects
-  - Lists
-  - Dictionaries
-  - Functions
-  - Loops
-  - Conditional statements
-  - Exception handling
-  - File handling
-  - JSON data storage
-  - String formatting
-  - Date validation
-  - CRUD operations
-  - Searching and filtering
-  - Basic data analysis
-  
-🔄 CRUD Operations
-
-The project implements the basic CRUD 
-operations:
-
-    Operation       Feature
-      Create      Add Expense
-      Read        View/Search Expenses       Update       Update Expense
-      Delete      Delete Expense
-
-🔮 Future Improvements
 Possible future versions could include:
-  - Monthly expense reports
-  - Date-range filtering
-  - Budget management
-  - Income tracking
-  - Balance calculation
-  - Graphical user interface (GUI)
-  - SQLite database
-  - User authentication
-  - Export reports to CSV
-  - Web-based version
-  
-  
-👨‍💻 Author
+
+- Login system
+- Teacher and administrator accounts
+- SQLite database
+- Graphical User Interface
+- Student report generation
+- PDF report cards
+- Attendance management
+- Course management
+- Web-based version
+- REST API
+
+Author
 
 Zelalem
 
-This project was created as part of my Python programming and portfolio development journey
+Python Developer in Progress
+
+This project is part of my programming portfolio as I continue developing practical software projects for freelance opportunities.
